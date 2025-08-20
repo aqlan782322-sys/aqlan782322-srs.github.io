@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>نظام أمين المخازن - مصمم: محمد عقلان</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <h1>مرحباً بكم في نظام أمين المخازن</h1>
+    <img src="aaa.jpg" alt="logo.png" class="dist">
+    <h2>شركة النجاح للتقنية</h2>
+  </header>
+
+  <div id="controls" class="card">
+    <button onclick="showClientList()"><i class="fa-solid fa-user"></i> قائمة العملاء</button>
+    <button onclick="showAddClientForm()"><i class="fa-solid fa-user-plus"></i> إضافة عميل جديد</button>
+    <button onclick="showProductList()"><i class="fa-solid fa-boxes-stacked"></i> قائمة المواد</button>
+    <button onclick="showAddProductForm()"><i class="fa-solid fa-plus-square"></i> إضافة مادة جديدة</button>
+  </div>
+
+  <!-- إضافة عميل -->
+  <div id="addClientForm" class="hidden card">
+    <h3>إضافة عميل جديد</h3>
+    <form id="clientForm">
+      <input type="text" id="clientName" placeholder="اسم العميل" required><br><br>
+      <input type="text" id="clientPhone" placeholder="رقم الهاتف" required><br><br>
+      <button type="submit"><i class="fa-solid fa-floppy-disk"></i> حفظ العميل</button>
+    </form>
+  </div>
+
+  <!-- قائمة العملاء -->
+  <div id="clientList" class="hidden card">
+    <h3>قائمة العملاء</h3>
+    <button onclick="window.print()"><i class="fa-solid fa-print"></i> طباعة العملاء</button>
+    <table>
+      <thead>
+        <tr>
+          <th>اسم العميل</th>
+          <th>رقم الهاتف</th>
+          <th class="actions">إجراءات</th>
+        </tr>
+      </thead>
+      <tbody id="clientTable"></tbody>
+    </table>
+  </div>
+
+  <!-- إضافة مادة -->
+  <div id="addProductForm" class="hidden card">
+    <h3>إضافة مادة جديدة</h3>
+    <form id="productForm">
+      <input type="text" id="productName" placeholder="اسم المادة" required><br><br>
+
+      <select id="productType" required onchange="toggleSize()">
+        <option value="">اختر النوع</option>
+        <option value="غذائية">غذائية</option>
+        <option value="استهلاكية">استهلاكية</option>
+      </select><br><br>
+
+      <div id="sizeDiv" style="display:none;">
+        <label>الحجم:</label><br>
+        <select id="productSize">
+          <option value="كبير">كبير</option>
+          <option value="وسط">وسط</option>
+          <option value="صغير">صغير</option>
+        </select><br><br>
+      </div>
+
+      <input type="number" id="productQuantity" placeholder="الكمية" required><br><br>
+      <input type="date" id="productDate" placeholder="تاريخ الصلاحية/الشراء" required><br><br>
+      <button type="submit"><i class="fa-solid fa-floppy-disk"></i> حفظ المادة</button>
+    </form>
+  </div>
+
+  <!-- قائمة المواد -->
+  <div id="productList" class="hidden card">
+    <h3>قائمة المواد</h3>
+    <button onclick="window.print()"><i class="fa-solid fa-print"></i> طباعة المواد</button>
+    <table>
+      <thead>
+        <tr>
+          <th>اسم المادة</th>
+          <th>النوع</th>
+          <th>الحجم</th>
+          <th>الكمية</th>
+          <th>التاريخ</th>
+          <th class="actions">إجراءات</th>
+        </tr>
+      </thead>
+      <tbody id="productTable"></tbody>
+    </table>
+  </div>
+
+  <footer>
+    <p>مصمم ومبرمج هذا النظام: محمد عقلان</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
